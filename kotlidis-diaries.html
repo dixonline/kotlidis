@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Kotlidis Diaries - Cases</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Kotlidis Diaries Specific Styles */
+
+    .diaries-hero {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 5vw;
+      background:
+        linear-gradient(
+          rgba(14, 14, 13, 0.85),
+          rgba(59, 13, 13, 0.85)
+        ),
+        url("hero-image.jpg") center / cover;
+      text-align: center;
+    }
+
+    .diaries-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--text);
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    .diaries-hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Cases Grid */
+
+    .cases-container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 5vw;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .case-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .case-card:hover {
+      border-color: rgba(201, 130, 36, 0.6);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .case-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .case-card h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--text);
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .case-date {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .case-category {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .case-excerpt {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .case-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-read-more {
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .case-card:hover .case-read-more {
+      color: var(--gold-soft);
+    }
+
+    .case-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 768px) {
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-card-header {
+        flex-direction: column;
+      }
+
+      .case-date {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="kotlidis_logo.png" alt="Detective Kotlidis Logo" class="logo-img">
+      Erevnitis Kotlidis</a>
+
+    <nav class="nav">
+      <a href="index.html">Αρχική</a>
+      <a href="#" class="diaries-link">Kotlidis Diaries</a>
+      <a href="#">Υπηρεσίες</a>
+      <a href="#">Μαρτυρίες</a>
+      <a href="#">About Kotlidis</a>
+      <a href="#">Επικοινωνία</a>
+    </nav>
+
+    <a href="#" class="btn btn-small">Επικοινωνήστε</a>
+  </header>
+
+  <section class="diaries-hero">
+    <div>
+      <h1>The Kotlidis Diaries</h1>
+      <p>Πραγματικές υποθέσεις. Πραγματικοί άνθρωποι. Πραγματικά περίεργα πράγματα.</p>
+    </div>
+  </section>
+
+  <section class="cases-container">
+    <div>
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Υποθέσεις</h2>
+      <p style="text-align: center; color: var(--muted); margin-top: 0;">Διαβάστε τις υποθέσεις που έχω λύσει.</p>
+    </div>
+
+    <div class="cases-grid">
+      
+      <div class="case-card">
+        <div class="case-image">
+          <img src="case-agathis.png" alt="Η Υπόθεση Αγάθης">
+        </div>
+
+        <div class="case-card-header">
+          <div>
+            <p class="case-category">Εξαφάνιση</p>
+            <h3>Η Υπόθεση Αγάθης</h3>
+          </div>
+          <span class="case-date">Φθινόπωρο 2019</span>
+        </div>
+        <p class="case-excerpt">Ένα γραφείο σταματημένο στο χρόνο. Μια γυναίκα που δεν θα έπρεπε να ξαναφανεί. Και τρία λεπτά που άλλαξαν τα πάντα.</p>
+        <div class="case-footer">
+          <a href="#" class="case-read-more">Διαβάστε την περίπτωση →</a>
+          <span class="case-meta">~1500 λέξεις</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-image">
+          <img src="case-dikaiosyni.png" alt="Το Διαμέρισμα της Δικαιοσύνης">
+        </div>
+        <div class="case-card-header">
+          <div>
+            <p class="case-category">Δολοφονία</p>
+            <h3>Το Διαμέρισμα της Δικαιοσύνης</h3>
+          </div>
+          <span class="case-date">Χειμώνας 2020</span>
+        </div>
+        <p class="case-excerpt">Ένα δωμάτιο. Πέντε ύποπτοι. Και ένας νεκρός που κανείς δεν περίμενε να είναι νεκρός.</p>
+        <div class="case-footer">
+          <a href="#" class="case-read-more">Διαβάστε την περίπτωση →</a>
+          <span class="case-meta">~1800 λέξεις</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-image">
+          <img src="case-taberna.png" alt="Το Μυστικό της Ταβέρνας">
+        </div>
+        <div class="case-card-header">
+          <div>
+            <p class="case-category">Εκβίαση</p>
+            <h3>Το Μυστικό της Ταβέρνας</h3>
+          </div>
+          <span class="case-date">Άνοιξη 2021</span>
+        </div>
+        <p class="case-excerpt">Κρυμμένα σχέδια σε σκοτεινούς γωνιές. Κανένας δεν μιλάει, αλλά όλοι γνωρίζουν. Και η απλή αλήθεια ήταν πολύ περίπλοκη.</p>
+        <div class="case-footer">
+          <a href="#" class="case-read-more">Διαβάστε την περίπτωση →</a>
+          <span class="case-meta">~1600 λέξεις</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-image">
+          <img src="case-apata.png" alt="Η Κάρτα που Δεν Υπήρχε">
+        </div>
+        <div class="case-card-header">
+          <div>
+            <p class="case-category">Απάτη</p>
+            <h3>Η Κάρτα που Δεν Υπήρχε</h3>
+          </div>
+          <span class="case-date">Καλοκαίρι 2021</span>
+        </div>
+        <p class="case-excerpt">Μια κατοικία. Μια κάρτα πίστωσης. Και μια γυναίκα που άρχισε να κάνει ερωτήσεις που δεν θα έπρεπε να κάνει.</p>
+        <div class="case-footer">
+          <a href="#" class="case-read-more">Διαβάστε την περίπτωση →</a>
+          <span class="case-meta">~1400 λέξεις</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-image">
+          <img src="case-kleftis.png" alt="Ο Κλέφτης που Ήθελε να Πιάσει">
+        </div>
+        <div class="case-card-header">
+          <div>
+            <p class="case-category">Κλοπή</p>
+            <h3>Ο Κλέφτης που Ήθελε να Πιάσει</h3>
+          </div>
+          <span class="case-date">Φθινόπωρο 2021</span>
+        </div>
+        <p class="case-excerpt">Ένας κλέφτης που ήθελε να πιαστεί. Ένας ιδιοκτήτης σπιτιού που είχε άλλα προβλήματα. Και ένα ρολόι που δεν ήταν αυτό που έδειχνε.</p>
+        <div class="case-footer">
+          <a href="#" class="case-read-more">Διαβάστε την περίπτωση →</a>
+          <span class="case-meta">~1700 λέξεις</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-image">
+          <img src="mystery-man.png" alt="Η Υπόθεση Αγάθης">
+        </div>
+        <div class="case-card-header">
+          <div>
+            <p class="case-category">Εξαφάνιση</p>
+            <h3>Ο Άντρας που Ήθελε να Χαθεί</h3>
+          </div>
+          <span class="case-date">Χειμώνας 2021</span>
+        </div>
+        <p class="case-excerpt">Ένας άντρας που εξαφανίστηκε εσκεμμένα. Μια σύζυγος που ήξερε περισσότερα από όσα έλεγε. Και ένα μυστικό που δεν ήταν αυτό που όλοι νόμιζαν.</p>
+        <div class="case-footer">
+          <a href="#" class="case-read-more">Διαβάστε την περίπτωση →</a>
+          <span class="case-meta">~1900 λέξεις</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 Detective Kotlidis</p>
+
+    <nav>
+      <a href="#">Πολιτική Απορρήτου</a>
+      <a href="#">Άσκηση Διαχείρισης Δεδομένων</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
